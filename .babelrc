@@ -1,0 +1,29 @@
+{
+  "presets": [
+    ["@babel/preset-env", { "targets": { "node": true }, "modules": "cjs" }]
+  ],
+  "ignore": ["node_modules"],
+  "plugins": [
+    ["@babel/plugin-proposal-optional-chaining"],
+    [
+      "@babel/plugin-transform-modules-commonjs",
+      {
+        "strictMode": false
+      }
+    ]
+  ]
+}
+
+// module.exports = function(api) {
+//   api.cache(false)
+//   return {
+//     presets: [[
+//       "@babel/preset-env",
+//       {targets: {node: true}, modules: 'cjs'}
+//     ]],
+//     plugins: [[
+//         "@babel/proposal-class-properties",
+//     "@babel/proposal-object-rest-spread"
+//     ]]
+//   }
+// }

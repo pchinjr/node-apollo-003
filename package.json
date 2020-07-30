@@ -1,0 +1,27 @@
+{
+  "name": "begin-app",
+  "version": "0.0.0",
+  "description": "Begin basic Apollo GraphQL API",
+  "scripts": {
+    "build": "cross-env npx babel ./lib -d ./src --copy-files --include-dotfiles --plugins  @babel/plugin-transform-modules-commonjs",
+    "start": "cross-env npm run build && npx arc sandbox",
+    "deploy": "cross-env npm run build && npx arc deploy",
+    "test": "cross-env NODE_ENV=testing PORT=6666 tape test/*-test.js ./test/**/*-test.js | tap-spec"
+  },
+  "dependencies": {
+    "@architect/sandbox": "latest",
+    "@begin/data": "latest",
+    "cross-env": "^7.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.1",
+    "tiny-json-http": "^7.2.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "babel-plugin-transform-runtime": "^6.23.0"
+  }
+}
